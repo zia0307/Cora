@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cora - Anxiety Relief</title>
+  <link rel = "stylesheet" type = "text/css" href = "cora_stylesheet.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="gowun-dodum-regular">
+    <div class="container">
+      <h1>Do you want to relieve your anxiety?</h1>
+      
+      <div class="button-container">
+        <button id="yes" class="button">Yes</button>
+        <button id="no" class="button">No</button>
+      </div>
+
+      <div id="content">
+        Hey, it's going to be okay. Chin up! You've gotten this far already.  
+        <br><br>
+        <em>You are the sky. Everything else is just the weather.<br>
+        <a href="https://www.youtube.com/shorts/0cnFmdwpMI4" target="_blank">Here's something for you</a></em>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById("no");
+    const yesBtn = document.getElementById("yes");
+    const content = document.getElementById("content");
+
+    noBtn.addEventListener("mouseover", () => {
+      const x = Math.floor(Math.random() * (window.innerWidth - noBtn.clientWidth));
+      const y = Math.floor(Math.random() * (window.innerHeight - noBtn.clientHeight));
+      noBtn.style.position = "absolute";
+      noBtn.style.left = x + "px";
+      noBtn.style.top = y + "px";
+    });
+
+    //gives you content when yes is clicked 
+    yesBtn.addEventListener("click", () => {
+      content.style.display = "block";
+      yesBtn.style.display = "none";
+      noBtn.style.display = "none";
+      
+      //smol tiny animation smooooooth
+      content.style.animation = "fadeIn 0.5s ease-in-out";
+    });
+  </script>
+</body>
+</html>
